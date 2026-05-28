@@ -1,482 +1,950 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trinh-Cong Ho - CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio cá nhân</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --card: rgba(255,255,255,0.08);
+      --card-border: rgba(255,255,255,0.12);
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #38bdf8;
+      --accent-2: #a78bfa;
+      --shadow: 0 20px 40px rgba(0,0,0,0.25);
+      --radius: 22px;
+      --maxw: 1180px;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #f0f0f0;
-            padding: 20px;
-            line-height: 1.4;
-        }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    /* body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(56,189,248,0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(167,139,250,0.16), transparent 26%),
+        linear-gradient(180deg, #020617 0%, #0f172a 45%, #111827 100%);
+      min-height: 100vh;
+    } */
 
-        .cv-container {
-            max-width: 794px;
-            margin: 0 auto;
-            background: white;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            display: flex;
-            min-height: 1000px;
-        }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,255,255,0.04), transparent 30%),
+        linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+      }
 
-        /* Left Column */
-        .left-column {
-            width: 260px;
-            background-color: #f5f5f5;
-        }
 
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            margin: 25px 25px 25px 40px;
-            border: 1px solid #dee2e6;
-            overflow: hidden;
-            background-position: center
-        }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-        .profile-section {
-            text-align: center;
-            padding: 40px 20px 30px;
-            background-color: #f5f5f5;
-        }
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-        /* .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 25px;
-            background: #e9ecef;
-            border: 1px solid #dee2e6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: #6c757d;
-        } */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(2, 6, 23, 0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-        .name-title {
-            background: #f5f5f5;
-            padding: 0 0 25px 30px;
-        }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
 
-        .name {
-            font-size: 30px;
-            font-weight: 700;
-            color: #333132;
-            margin-bottom: 8px;
-            line-height: 1.2;
-        }
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
 
-        .title {
-            font-size: 18px;
-            color: #4d4d4f;
-            font-weight: 400;
-        }
+    .brand span { color: var(--accent); }
 
-        /* Left sections */
-        .left-section {
-            margin-bottom: 0;
-        }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-        .section-header {
-            background-color: #454541;
-            color: white;
-            padding: 5px 14px;
-            font-weight: 700;
-            font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-radius: 25px;
-            margin: 0 40px 20px 40px;
-            text-align: center;
-        }
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
 
-        .section-content {
-            padding: 0 30px 20px;
-            /* background-color: #f8f9fa; */
-        }
+    .nav-links a:hover { color: white; }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 12px;
-            font-size: 13px;
-            color: #454541;
-            font-weight: 400;
-        }
+    .btn {
+      border: none;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 700;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    }
 
-        .contact-item .icon {
-            width: 16px;    
-            margin-right: 12px;
-            color: #454541;
-            flex-shrink: 0;
-            margin-top: 1px;
-            font-size: 16px;
-        }
+    .btn:hover { transform: translateY(-1px); }
 
-        .education-content h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #454541;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      box-shadow: var(--shadow);
+    }
 
-        .education-content p {
-            font-size: 13px;
-            color: #454541;
-            /* margin-bottom: 4px; */
-            font-weight: 400;
-        }
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
 
-        .skills-list {
-            list-style: none;
-        }
+    .hero {
+      padding: 56px 0 36px;
+    }
 
-        .skills-list li {
-            font-size: 14px;
-            color: #454541;
-            margin-bottom: 8px;
-            padding-left: 15px;
-            position: relative;
-            font-weight: 400;
-        }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
 
-        .skills-list li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #454541;
-            font-weight: 600;
-        }
+    .glass {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
 
-        /* Right Column */
-        .right-column {
-            flex: 1;
-            padding: 40px 40px;
-            background: white;
-        }
+    .hero-card {
+      padding: 34px;
+    }
 
-        .section-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #454541;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            position: relative;
-            letter-spacing: 0.5px;
-        }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.12);
+      color: #bae6fd;
+      border: 1px solid rgba(56,189,248,0.18);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 1px;
-            background-color: #454541;
-            width: calc(100% - 200px);
-        }
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.08;
+      margin: 0 0 14px;
+    }
 
-        .experience-item {
-            margin-bottom: 20px;
-        }
+    .gradient-text {
+      background: linear-gradient(135deg, #7dd3fc, #c4b5fd);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            /* margin-bottom: 4px; */
-        }
+    .lead {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin: 0 0 24px;
+    }
 
-        .job-title {
-            font-size: 16px;
-            color: #212529;
-            font-weight: 400;
-        }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+    }
 
-        .job-date {
-            font-size: 16px;
-            font-style: italic;
-            color: #454541;
-            white-space: nowrap;
-            font-weight: 400;
-        }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
 
-        .company {
-            font-size: 16px;
-            color: #454541;
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-        .job-description {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .stat strong {
+      display: block;
+      font-size: 1.45rem;
+      margin-bottom: 6px;
+    }
 
-        .job-description li {
-            font-size: 12px;
-            color: #454541;
-            margin-bottom: 6px;
-            padding-left: 15px;
-            position: relative;
-            font-weight: 400;
-        }
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-        .job-description li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #454541;
-            font-weight: 600;
-        }
+    .profile-card {
+      padding: 26px;
+      text-align: center;
+    }
 
-        .projects-section {
-            margin-top: 35px;
-        }
+    .avatar-wrap {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    }
 
-        .projects-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #0b1220;
+    }
 
-        .projects-list li {
-            font-size: 14px;
-            color: #454541;
-            margin-bottom: 8px;
-            padding-left: 15px;
-            position: relative;
-            font-weight: 200;
-        }
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin: 0 0 6px;
+    }
 
-        .projects-list li:before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: #454541;
-            font-weight: 600;
-        }
+    .profile-role {
+      color: #bae6fd;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
 
-        .references-section {
-            margin-top: 35px;
-        }
+    .info-list {
+      display: grid;
+      gap: 10px;
+      text-align: left;
+      margin-top: 18px;
+    }
 
-        .references-container {
-            display: flex;
-            gap: 0px;
-        }
+    .info-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      line-height: 1.5;
+    }
 
-        .reference-item {
-            flex: 1;
-        }
+    .info-item strong {
+      color: white;
+      display: inline-block;
+      min-width: 92px;
+    }
 
-        .reference-item h4 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #454541;
-            margin-bottom: 4px;
-        }
+    section {
+      padding: 18px 0 24px;
+    }
 
-        .reference-role {
-            font-size: 14px;
-            color: #454541;
-            margin-bottom: 12px;
-            font-weight: 500;
-        }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
 
-        .reference-contact {
-            font-size: 12px;
-            color: #454541;
-            margin-bottom: 2px;
-            font-weight: 400;
-        }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.6rem, 2vw, 2.2rem);
+    }
 
-        .reference-contact strong {
-            font-weight: 700;
-        }
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
 
-        @media (max-width: 750px) {
-            .cv-container {
-                flex-direction: column;
-                margin: 20px;
-            }
-            
-            .left-column {
-                width: 100%;
-            }
-            
-            .references-container {
-                flex-direction: column;
-                gap: 20px;
-            }
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
 
-            .section-title::after {
-                width: calc(100% - 140px);
-            }
-        }
-    </style>
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .chip.active,
+    .chip:hover {
+      background: rgba(56,189,248,0.16);
+      border-color: rgba(56,189,248,0.35);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56,189,248,0.28);
+    }
+
+    .thumb {
+      aspect-ratio: 16 / 10;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
+      position: relative;
+      cursor: zoom-in;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .project-card:hover .thumb img {
+      transform: scale(1.04);
+    }
+
+    .project-body {
+      padding: 18px;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .project-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .project-index {
+      white-space: nowrap;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      background: rgba(255,255,255,0.06);
+      color: #bae6fd;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .project-desc {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0 0 12px;
+      min-height: 78px;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-size: 0.8rem;
+      background: rgba(167,139,250,0.14);
+      color: #ddd6fe;
+      border: 1px solid rgba(167,139,250,0.18);
+    }
+
+    .empty-state {
+      padding: 28px;
+      color: var(--muted);
+      text-align: center;
+      display: none;
+    }
+
+    .footer {
+      padding: 36px 0 52px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,0.78);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 18px;
+    }
+
+    .overlay.show { display: flex; }
+
+    .modal {
+      width: min(1100px, 100%);
+      height: min(88vh, 820px);
+      background: #06101f;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .modal-title {
+      font-weight: 800;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .icon-btn {
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.06);
+      color: white;
+      border-radius: 12px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: white;
+      flex: 1;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(2,6,23,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 120;
+      padding: 18px;
+    }
+
+    .lightbox.show { display: flex; }
+
+    .lightbox img {
+      max-width: min(1200px, 100%);
+      max-height: 88vh;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+    }
+
+
+    .project-gallery {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: min(1400px, 95vw);
+      max-height: 85vh;
+    }
+
+    .project-gallery img {
+      height: 600px;
+      width: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 14px;
+      cursor: zoom-in;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.25s ease;
+    }
+
+    .project-gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .single-viewer-image {
+      max-width: min(1200px, 94vw);
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-card,
+      .profile-card {
+        padding: 22px;
+      }
+
+      .nav-inner,
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .thumb {
+        aspect-ratio: 16 / 11;
+      }
+
+      .project-desc {
+        min-height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="cv-container">
-        <!-- Left Column -->
-        <div class="left-column">
-            <img src="avt.jpg" alt="Avatar" class="profile-img">
-            <!-- <div class="profile-section">
-                <div class="profile-img">👤</div>
-            </div> -->
-            
-            <div class="name-title">
-                <div class="name">Trinh-Cong Ho</div>
-                <div class="title">Engineer</div>
-            </div>
-
-            <div class="left-section">
-                <div class="section-header">CONTACT</div>
-                <div class="section-content">
-                    <div class="contact-item">
-                        <div class="icon">☎</div>
-                        <div>+84 869-733-154</div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon">✉</div>
-                        <div><a href="mailto:ctrinh01028485@gmail.com" style="color:inherit;text-decoration:none;">
-ctrinh01028485@gmail.com</a></div>
-                    </div>
-                    <div class="contact-item">
-                        <!-- <div class="icon">🇮🇳</div> -->
-                        <!-- <div class="icon"><i class="fab fa-github"></i></div> -->
-                        <div class="icon">🅶</div>
-                        <!-- <i class="fab fa-github"></i> -->
-                        <!-- <div class="icon"><i class="fa-brands fa-github"></i></div> -->
-                        <div><a href="https://github.com/GigaOhms" style="color:inherit;text-decoration:none;">
-github.com/GigaOhms</a></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon">🏠︎</div>
-                        <div>Ha Huy Giap, An Phu Dong, Ho Chi Minh City</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="left-section">
-                <div class="section-header">EDUCATION</div>
-                <div class="section-content">
-                    <div class="education-content">
-                        <h3>Industrial University of Ho Chi Minh City</h3>
-                        <p><strong>Electrical - Electronic engineering</strong></p>
-                        <p style="color: #737373;"><strong>Graduate</strong></p>
-                        <p>Sep. 2019 - Jan. 2024</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="left-section">
-                <div class="section-header">SKILLS</div>
-                <div class="section-content">
-                    <ul class="skills-list">
-                        <li>English: Toeic 545/990</li>
-                        <li>Programing: C/C++</li>
-                        <li>Understand communication protocols: UART, I2C, SPI, CAN, Modbus, PWM </li>
-                        <li>PCB design with Altium/Kicad</li>
-                        <li>Hands-on soldering & testing</li>
-                        <li>Understanding of power electronics</li>
-                        <li>Using PSim/MATLAB to simulate power electronics</li>
-                        <li>Analytical, problem solving, debugging</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right Column -->
-        <div class="right-column">
-            <div class="section-title">WORK EXPERIENCE</div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">Hardware Engineer - Intern</div>
-                    <div class="job-date">Nov. 2022 - Feb. 2023</div>
-                </div>
-                <div class="company">MEI Group CO.,LTD | HCMC</div>
-                <ul class="job-description">
-                    <li>Learn how to use measuring instruments including schematic, capture, component selection, layout design and optimized design.</li>
-                    <li>Basic programming of C/C++ based microcontrollers and available frameworks.</li>
-                    <li>Participate in the development of some products at the request of customers partners.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">Lab assistants</div>
-                    <div class="job-date">Sep. 2022 - May. 2023</div>
-                </div>
-                <div class="company">IUHPEAL lab | Industrial University of HCMC</div>
-                <ul class="job-description">
-                    <li>Participate in simulation and control projects some basic converters on PSim/Simulink software and experimental.</li>
-                    <li>Implementation of digital controller on DSP/Microcontroller.</li>
-                    <li>Learning and studying about user interfaces to create and modify test schematics and layouts.</li>
-                    <li>Testing measurements and resolving hardware or software-related problems.</li>
-                    <li>Assisting in the documentation of lab procedures, experiment protocols, and results.</li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="job-header">
-                    <div class="job-title">IoT Engineer - Fresher</div>
-                    <div class="job-date">Jun. 2023 - Jan. 2024</div>
-                </div>
-                <div class="company">MEI Group CO.,LTD | HCMC</div>
-                <ul class="job-description">
-                    <li>Designing IoT devices, electronic circuits, and control circuits for smart systems.</li>
-                    <li>Utilize measurement tools, including circuit diagrams, capture, component selection, layout design, and optimization design.</li>
-                    <li>Programming and controlling equipment according to customer requirements.</li>
-                    <li>Installing and implementing solutions for partners.</li>
-                </ul>
-            </div>
-
-            <div class="projects-section">
-                <div class="section-title">PROJECTS</div>
-                <ul class="projects-list">
-                    <li><strong>Experimental model of low power 3-phase inverter using STM32F103</strong></li>
-                    <li><strong>Low cost Isolating dummy Probe for oscilloscope</strong></li>
-                    <li><strong>Digital implementation and design of an AC/DC PFC converter combined with a two-switch DC/DC forward converter for battery charging applications.</strong></li>
-                    <li><strong>Simulation and analysis of a High-Performance Single-Phase Bridgeless Interleaved PFC Converter for EV battery chargers.</strong></li>
-                    <li><strong>Research and Manufacturing Model Analysis of Electrical Parameters using Hall Sensor Applications in Power Electronics.</strong></li>
-                    <li><strong>Design and Fabrication of an Autonomous Line Follower Robot</strong></li>
-                    <li><strong>Designing IoT device circuits, smart control and monitoring systems.</strong></li>
-                </ul>
-            </div>
-
-            <div class="references-section">
-                <div class="section-title">REFERENCES</div>
-                <div class="references-container">
-                    <div class="reference-item">
-                        <h4>Dr. Tan-Tai Tran</h4>
-                        <div class="reference-role">IUHPEAL / Lab Supervisor</div>
-                        <div class="reference-contact"><strong>Phone:</strong>&emsp;0839359105</div>
-                        <div class="reference-contact"><strong>Email:</strong>&emsp; trantantai@iuh.edu.vn</div>
-                    </div>
-                    <div class="reference-item">
-                        <h4>Tran Nam Hai</h4>
-                        <div class="reference-role">MEI Group CO.,LTD / Director</div>
-                        <div class="reference-contact"><strong>Phone:</strong>&emsp;0865578778</div>
-                        <div class="reference-contact"><strong>Email:</strong>&emsp; tr.namhai@meigroup.vn</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">My<span>Portfolio</span></div>
+      <div class="nav-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#projects">Dự án</a>
+        <a href="#contact">Liên hệ</a>
+        <button class="btn btn-primary" id="openCvTop">Xem CV</button>
+      </div>
     </div>
+  </nav>
+
+  <header class="hero" id="about">
+    <div class="container hero-grid">
+      <div class="glass hero-card">
+        <div class="tag">Portfolio cá nhân • Dự án • Hình ảnh • CV</div>
+        <h1>
+          Hello, I am            
+          <span class="gradient-text" id="nameText">Tên của bạn</span>
+        </h1>
+        <p class="lead" id="introText">
+          Đây là không gian để giới thiệu những dự án tôi đã thực hiện, hình ảnh sản phẩm, mô tả ngắn gọn cho từng dự án và một số thông tin cá nhân nổi bật.
+        </p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="openCvMain">Open CV</button>
+          <a class="btn btn-secondary" href="#projects">View projects</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong style="font-size: 45px;">1+</strong>
+            <span style="font-size: 16px;">Years of Experience</span>
+          </div>
+          <div class="stat">
+            <strong id="roleText">Hardware Engineering</strong>
+            <span style="font-size: 17px;">Field</span>
+          </div>
+          <div class="stat">
+            <strong>Power Electronics</strong>
+            <span style="font-size: 17px;">Main Expertise</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="glass profile-card" id="contact">
+        <div class="avatar-wrap">
+          <img class="avatar" id="avatarImage" src="avt.jpg" alt="Avatar" />
+        </div>
+        <div class="profile-name" id="profileName">Hồ Công Trình</div>
+        <div class="profile-role" id="profileRole">Công việc / Vai trò</div>
+        <div class="info-list">
+          <div class="info-item"><strong>Email:</strong> <span id="emailText">ctrinh01028485@gmail.com</span></div>
+          <div class="info-item"><strong>Phone:</strong> <span id="phoneText">0123 456 789</span></div>
+          <div class="info-item"><strong>Location:</strong> <span id="locationText">Ho Chi Minh, Viet Nam</span></div>
+          <div class="info-item"><strong>Goal:</strong> <span id="goalText">Giới thiệu các dự án đã thực hiện một cách rõ ràng và trực quan.</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Outstanding projects</h2>
+          <p>Hệ thống sẽ tự hiển thị ảnh theo dạng <code>img/img1.png</code>, <code>img/img2.png</code>... cho đến khi không còn ảnh tiếp theo.</p>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button class="chip active" data-filter="all">Tất cả</button>
+        <button class="chip" data-filter="web">Web</button>
+        <button class="chip" data-filter="design">Design</button>
+        <button class="chip" data-filter="other">Khác</button>
+      </div>
+
+      <div class="grid" id="projectGrid"></div>
+      <div class="glass empty-state" id="emptyState">Chưa tìm thấy ảnh dự án trong thư mục <strong>img</strong>.</div>
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <p>© <span id="yearNow"></span> • Cảm ơn bạn đã dành thời gian xem qua hồ sơ của mình</p>
+  </footer>
+
+  <div class="overlay" id="cvOverlay" aria-hidden="true">
+    <div class="modal">
+      <div class="modal-head">
+        <div class="modal-title">CV của tôi</div>
+        <div class="modal-actions">
+          <a class="icon-btn" href="cv.html" target="_blank" rel="noopener noreferrer">Mở tab mới</a>
+          <button class="icon-btn" id="closeCv">Đóng</button>
+        </div>
+      </div>
+      <iframe src="cv.html" title="CV"></iframe>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="icon-btn lightbox-close" id="closeLightbox">Đóng gallery</button>
+    <div class="glass project-gallery" id="projectGallery"></div>
+  </div>
+
+  <div class="lightbox" id="singleImageViewer">
+    <button class="icon-btn lightbox-close" id="closeSingleViewer">Đóng ảnh</button>
+    <img class="single-viewer-image" id="singleViewerImage" src="" alt="Preview image" />
+  </div>
+
+  <script>
+    const profile = {
+      name: 'Cong-Trinh Ho',
+      role: 'Hardware Design Engineer',
+      email: 'ctrinh01028485@gmail.com',
+      phone: '+84 869-733-154',
+      location: 'Ho Chi Minh, Viet Nam',
+      intro: 'I am passionate about hardware design, embedded systems, and power electronics. I enjoy developing practical electronic solutions, from PCB design to power conversion systems, while continuously improving my technical and problem-solving skills.',
+      goal: 'To become a specialist in hardware design and power electronics.'
+    };
+
+    const projectDescriptions = {
+      1: {
+        title: 'Dự án 1',
+        desc: 'Mô tả ngắn về dự án số 1. Bạn có thể thay phần này bằng tên dự án thật, vai trò của bạn và kết quả đạt được.',
+        tags: ['web', 'ui'],
+        label: 'Web'
+      },
+      2: {
+        title: 'Dự án 2',
+        desc: 'Mô tả ngắn về dự án số 2. Ví dụ: thiết kế giao diện, xây dựng landing page hoặc triển khai portfolio cá nhân.',
+        tags: ['design'],
+        label: 'Design'
+      },
+      3: {
+        title: 'Dự án 3',
+        desc: 'Mô tả ngắn về dự án số 3. Có thể ghi rõ công cụ sử dụng, mục tiêu dự án hoặc đối tượng người dùng.',
+        tags: ['other'],
+        label: 'Khác'
+      }
+    };
+
+    const els = {
+      nameText: document.getElementById('nameText'),
+      introText: document.getElementById('introText'),
+      roleText: document.getElementById('roleText'),
+      profileName: document.getElementById('profileName'),
+      profileRole: document.getElementById('profileRole'),
+      emailText: document.getElementById('emailText'),
+      phoneText: document.getElementById('phoneText'),
+      locationText: document.getElementById('locationText'),
+      goalText: document.getElementById('goalText'),
+      projectGrid: document.getElementById('projectGrid'),
+      emptyState: document.getElementById('emptyState'),
+      projectCount: document.getElementById('projectCount'),
+      cvOverlay: document.getElementById('cvOverlay'),
+      lightbox: document.getElementById('lightbox'),
+      projectGallery: document.getElementById('projectGallery'),
+      avatarImage: document.getElementById('avatarImage'),
+      singleImageViewer: document.getElementById('singleImageViewer'),
+      singleViewerImage: document.getElementById('singleViewerImage')
+    };
+
+    function injectProfile() {
+      els.nameText.textContent = profile.name;
+      els.introText.textContent = profile.intro;
+      // els.roleText.textContent = profile.role;
+      els.profileName.textContent = profile.name;
+      els.profileRole.textContent = profile.role;
+      els.emailText.textContent = profile.email;
+      els.phoneText.textContent = profile.phone;
+      els.locationText.textContent = profile.location;
+      els.goalText.textContent = profile.goal;
+    }
+
+    function tryAvatarFallbacks() {
+      const fallbacks = ['avt.jpg', 'avto.jpg'];
+      let current = 0;
+      els.avatarImage.onerror = () => {
+        current += 1;
+        if (current < fallbacks.length) {
+          els.avatarImage.src = fallbacks[current];
+        } else {
+          els.avatarImage.onerror = null;
+          els.avatarImage.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
+            <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+              <rect width="400" height="400" fill="#0f172a"/>
+              <circle cx="200" cy="145" r="68" fill="#94a3b8"/>
+              <path d="M90 335c18-56 64-84 110-84s92 28 110 84" fill="#94a3b8"/>
+            </svg>
+          `);
+        }
+      };
+      els.avatarImage.src = fallbacks[current];
+    }
+
+    function openCv() {
+      els.cvOverlay.classList.add('show');
+      els.cvOverlay.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCv() {
+      els.cvOverlay.classList.remove('show');
+      els.cvOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function openProjectGallery(index, mainSrc) {
+      els.projectGallery.innerHTML = '';
+
+      const images = [mainSrc];
+
+      for (let i = 1; i <= 20; i++) {
+        images.push(`img/img${index}_${i}.png`);
+      }
+
+      images.forEach(src => {
+        const probe = new Image();
+
+        probe.onload = () => {
+          const item = document.createElement('img');
+          item.src = src;
+          item.alt = `Project ${index}`;
+
+          item.addEventListener('click', () => {
+            openSingleImage(src);
+          });
+
+          els.projectGallery.appendChild(item);
+        };
+
+        probe.src = src;
+      });
+
+      els.lightbox.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      els.lightbox.classList.remove('show');
+      els.projectGallery.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    function openSingleImage(src) {
+      els.singleViewerImage.src = src;
+      els.singleImageViewer.classList.add('show');
+    }
+
+    function closeSingleImage() {
+      els.singleImageViewer.classList.remove('show');
+      els.singleViewerImage.src = '';
+    }
+
+    function createCard(index, src, meta) {
+      const card = document.createElement('article');
+      card.className = 'glass project-card';
+      card.dataset.category = (meta.tags?.[0] || 'other').toLowerCase();
+
+      const badges = (meta.tags || ['other'])
+        .map(tag => `<span class="badge">${tag}</span>`)
+        .join('');
+
+      card.innerHTML = `
+        <div class="thumb">
+          <img src="${src}" alt="${meta.title}" loading="lazy" />
+        </div>
+        <div class="project-body">
+          <div class="project-top">
+            <h3 class="project-title">${meta.title}</h3>
+            <div class="project-index">#${String(index).padStart(2, '0')}</div>
+          </div>
+          <p class="project-desc">${meta.desc}</p>
+          <div class="badge-row">${badges}</div>
+        </div>
+      `;
+
+      const thumb = card.querySelector('.thumb');
+      thumb.addEventListener('click', () => openProjectGallery(index, src));
+      return card;
+    }
+
+    function loadProjects(max = 60) {
+      let index = 1;
+      let loaded = 0;
+
+      function tryNext() {
+        if (index > max) {
+          finalize();
+          return;
+        }
+
+        const src = `img/img${index}.png`;
+        const probe = new Image();
+
+        probe.onload = () => {
+          const meta = projectDescriptions[index] || {
+            title: `Dự án ${index}`,
+            desc: `Đây là hình ảnh cho dự án số ${index}. Bạn có thể chỉnh nội dung mô tả trong biến projectDescriptions bên dưới phần script.`,
+            tags: ['other'],
+            label: 'Khác'
+          };
+
+          els.projectGrid.appendChild(createCard(index, src, meta));
+          loaded += 1;
+          index += 1;
+          tryNext();
+        };
+
+        probe.onerror = () => {
+          finalize();
+        };
+
+        probe.src = src;
+      }
+
+      function finalize() {
+        // els.projectCount.textContent = `${loaded}+`;
+        if (loaded === 0) {
+          els.emptyState.style.display = 'block';
+        }
+        bindFilters();
+      }
+
+      tryNext();
+    }
+
+    function bindFilters() {
+      const chips = document.querySelectorAll('.chip');
+      const cards = Array.from(document.querySelectorAll('.project-card'));
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const filter = chip.dataset.filter;
+          let visible = 0;
+
+          cards.forEach(card => {
+            const match = filter === 'all' || card.dataset.category === filter;
+            card.style.display = match ? '' : 'none';
+            if (match) visible += 1;
+          });
+
+          els.emptyState.style.display = visible === 0 ? 'block' : 'none';
+          if (visible === 0) {
+            els.emptyState.textContent = 'Không có dự án nào thuộc nhóm này.';
+          }
+        });
+      });
+    }
+
+    document.getElementById('openCvTop').addEventListener('click', openCv);
+    document.getElementById('openCvMain').addEventListener('click', openCv);
+    document.getElementById('closeCv').addEventListener('click', closeCv);
+    document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+    document.getElementById('closeSingleViewer').addEventListener('click', closeSingleImage);
+
+    els.cvOverlay.addEventListener('click', (e) => {
+      if (e.target === els.cvOverlay) closeCv();
+    });
+
+    els.lightbox.addEventListener('click', (e) => {
+      if (e.target === els.lightbox) closeLightbox();
+    });
+
+    els.singleImageViewer.addEventListener('click', (e) => {
+      if (e.target === els.singleImageViewer) closeSingleImage();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCv();
+        closeLightbox();
+        closeSingleImage();
+      }
+    });
+
+    document.getElementById('yearNow').textContent = new Date().getFullYear();
+
+    injectProfile();
+    tryAvatarFallbacks();
+    loadProjects();
+  </script>
 </body>
 </html>
