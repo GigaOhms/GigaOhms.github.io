@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinh-Cong Ho - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            padding: 0px;   /* 20px */
+            line-height: 1.4;
+        }
+
+        .cv-container {
+            max-width: 794px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: flex;
+            min-height: 1000px;
+        }
+
+        /* Left Column */
+        .left-column {
+            width: 260px;
+            background-color: #f5f5f5;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 25px 25px 25px 40px;
+            border: 1px solid #dee2e6;
+            overflow: hidden;
+            background-position: center
+        }
+
+        .profile-section {
+            text-align: center;
+            padding: 20px 20px 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: #e9ecef;
+            border: 1px solid #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #6c757d;
+        } */
+
+        .name-title {
+            background: #f5f5f5;
+            padding: 0 0 25px 30px;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: 700;
+            color: #333132;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #4d4d4f;
+            font-weight: 400;
+        }
+
+        /* Left sections */
+        .left-section {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            background-color: #454541;
+            color: white;
+            padding: 5px 14px;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 20px;
+            margin: 0 50px 15px 50px;
+            text-align: center;
+        }
+
+        .section-content {
+            padding: 0 25px 20px;
+            /* background-color: #f8f9fa; */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: #454541;
+            font-weight: 400;
+        }
+
+        .contact-item .icon {
+            width: 16px;    
+            margin-right: 12px;
+            color: #454541;
+            flex-shrink: 0;
+            margin-top: 0px;
+            font-size: 16px;
+        }
+
+        .education-content h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #454541;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .education-content p {
+            font-size: 13px;
+            color: #454541;
+            /* margin-bottom: 4px; */
+            font-weight: 400;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            font-size: 14px;
+            color: #454541;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .skills-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #454541;
+            font-weight: 600;
+        }
+
+        /* Right Column */
+        .right-column {
+            flex: 1;
+            padding: 20px 20px;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #454541;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 1px;
+            background-color: #454541;
+            width: calc(100% - 200px);
+        }
+
+        .experience-item {
+            margin-bottom: 15px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* margin-bottom: 4px; */
+        }
+
+        .job-title {
+            font-size: 16px;
+            color: #212529;
+            font-weight: 400;
+        }
+
+        .job-date {
+            font-size: 16px;
+            font-style: italic;
+            color: #454541;
+            white-space: nowrap;
+            font-weight: 400;
+        }
+
+        .company {
+            font-size: 16px;
+            color: #454541;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .job-description {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-description li {
+            font-size: 12px;
+            color: #454541;
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .job-description li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #454541;
+            font-weight: 600;
+        }
+
+        .projects-section {
+            margin-top: 20px;
+        }
+
+        .projects-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .projects-list li {
+            font-size: 14px;
+            color: #454541;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+            font-weight: 200;
+        }
+
+        .projects-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #454541;
+            font-weight: 600;
+        }
+
+        .references-section {
+            margin-top: 20px;
+        }
+
+        .references-container {
+            display: flex;
+            gap: 0px;
+        }
+
+        .reference-item {
+            flex: 1;
+        }
+
+        .reference-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #454541;
+            margin-bottom: 4px;
+        }
+
+        .reference-role {
+            font-size: 14px;
+            color: #454541;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .reference-contact {
+            font-size: 12px;
+            color: #454541;
+            margin-bottom: 2px;
+            font-weight: 400;
+        }
+
+        .reference-contact strong {
+            font-weight: 700;
+        }
+
+        @media (max-width: 750px) {
+            .cv-container {
+                flex-direction: column;
+                margin: 20px;
+            }
+            
+            .left-column {
+                width: 100%;
+            }
+            
+            .references-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .section-title::after {
+                width: calc(100% - 140px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <img src="avt.jpg" alt="Avatar" class="profile-img">
+            <!-- <div class="profile-section">
+                <div class="profile-img">👤</div>
+            </div> -->
+            
+            <div class="name-title">
+                <div class="name">Trinh-Cong Ho</div>
+                <div class="title">Hardware engineer</div>
+            </div>
+
+            <div class="left-section">
+                <div class="section-header">CONTACT</div>
+                <div class="section-content">
+                    <div class="contact-item">
+                        <div class="icon">☎</div>
+                        <div>+84 869-733-154</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">✉</div>
+                        <div><a href="mailto:ctrinh01028485@gmail.com" style="color:inherit;text-decoration:none;">
+ctrinh01028485@gmail.com</a></div>
+                    </div>
+                    <div class="contact-item">
+                        <!-- <div class="icon">🇮🇳</div> -->
+                        <!-- <div class="icon"><i class="fab fa-github"></i></div> -->
+                        <div class="icon">🅶</div>
+                        <!-- <i class="fab fa-github"></i> -->
+                        <!-- <div class="icon"><i class="fa-brands fa-github"></i></div> -->
+                        <div><a href="https://github.com/GigaOhms" style="color:inherit;text-decoration:none;">
+github.com/GigaOhms</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="left-section">
+                <div class="section-header">EDUCATION</div>
+                <div class="section-content">
+                    <div class="education-content">
+                        <h3>Industrial University of Ho Chi Minh City</h3>
+                        <p><strong>Electrical - Electronic engineering</strong></p>
+                        <p style="color: #737373;"><strong>Graduate</strong></p>
+                        <p>Sep. 2019 - Jan. 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="left-section">
+                <div class="section-header">SKILLS</div>
+                <div class="section-content">
+                    <ul class="skills-list">
+                        <li>English: 545 TOEIC, B2 APTIS</li>
+                        <li>Programing: C/C++</li>
+                        <li>PCB design with Altium/Kicad</li>
+                        <li>Familiar with PSIM/MATLAB for power electronics and control system simulation</li>
+                        <li>Understand communication protocols: UART, I2C, SPI, CAN, Modbus, PWM </li>
+                        <li>Hands-on experience with soldering, hardware testing, and lab equipment</li>
+                        <li>Analytical, problem solving, debugging and team working</li> 
+                        <li>Skilled in using Microsoft Office (Word, Excel, PPT)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="section-title">WORK EXPERIENCE</div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Hardware Engineer - Intern</div>
+                    <div class="job-date">Nov. 2022 - Feb. 2023</div>
+                </div>
+                <div class="company">MEI Group CO.,LTD | HCMC</div>
+                <ul class="job-description">
+                    <li>Learn how to use measuring instruments including schematic, capture, component selection, layout design and optimized design.</li>
+                    <li>Basic programming of C/C++ based microcontrollers and available frameworks.</li>
+                    <li>Participate in the development of some products at the request of customers partners.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">Lab assistants</div>
+                    <div class="job-date">Sep. 2022 - May. 2023</div>
+                </div>
+                <div class="company">IUHPEAL lab | Industrial University of HCMC</div>
+                <ul class="job-description">
+                    <li>Participate in simulation and control projects some basic converters on PSim/Simulink software and experimental.</li>
+                    <li>Implementation of digital controller on DSP/Microcontroller.</li>
+                    <li>Learning and studying about user interfaces to create and modify test schematics and layouts.</li>
+                    <li>Testing measurements and resolving hardware or software-related problems.</li>
+                    <li>Assisting in the documentation of lab procedures, experiment protocols, and results.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div class="job-title">IoT Engineer - Fresher</div>
+                    <div class="job-date">Jun. 2023 - Jan. 2024</div>
+                </div>
+                <div class="company">MEI Group CO.,LTD | HCMC</div>
+                <ul class="job-description">
+                    <li>Designing IoT devices, electronic circuits, and control circuits for smart systems.</li>
+                    <li>Utilize measurement tools, including circuit diagrams, capture, component selection, layout design, and optimization design.</li>
+                    <li>Programming and controlling equipment according to customer requirements.</li>
+                    <li>Installing and implementing solutions for partners.</li>
+                </ul>
+            </div>
+
+            <div class="projects-section">
+                <div class="section-title">PROJECTS</div>
+                <ul class="projects-list">
+                    <li><strong>Experimental model of low power 3-phase inverter using STM32F103</strong></li>
+                    <li><strong>Low cost Isolating dummy Probe for oscilloscope</strong></li>
+                    <li><strong>Digital implementation and design of an AC/DC PFC converter combined with a two-switch DC/DC forward converter for battery charging applications.</strong></li>
+                    <li><strong>Simulation and analysis of a High-Performance Single-Phase Bridgeless Interleaved PFC Converter for EV battery chargers.</strong></li>
+                    <li><strong>Research and Manufacturing Model Analysis of Electrical Parameters using Hall Sensor Applications in Power Electronics.</strong></li>
+                    <li><strong>Design and Fabrication of an Autonomous Line Follower Robot</strong></li>
+                    <li><strong>USB Type-C powered bench power supply with PPS and PD3.0.</strong></li>
+                    <li><strong>Designing IoT device circuits, smart control and monitoring systems.</strong></li>
+                </ul>
+            </div>
+
+            <div class="references-section">
+                <div class="section-title">REFERENCES</div>
+                <div class="references-container">
+                    <div class="reference-item">
+                        <h4>Dr. Tan-Tai Tran</h4>
+                        <div class="reference-role">IUHPEAL / Lab Supervisor</div>
+                        <div class="reference-contact"><strong>Phone:</strong>&emsp;0839359105</div>
+                        <div class="reference-contact"><strong>Email:</strong>&emsp; trantantai@iuh.edu.vn</div>
+                    </div>
+                    <div class="reference-item">
+                        <h4>Tran Nam Hai</h4>
+                        <div class="reference-role">MEI Group CO.,LTD / Director</div>
+                        <div class="reference-contact"><strong>Phone:</strong>&emsp;0865578778</div>
+                        <div class="reference-contact"><strong>Email:</strong>&emsp; tr.namhai@meigroup.vn</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

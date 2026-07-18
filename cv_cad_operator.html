@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trinh-Cong Ho - CAD Operator CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #f0f0f0;
+            padding: 0px;   /* 20px */
+            line-height: 1.4;
+        }
+
+        .cv-container {
+            max-width: 794px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            display: flex;
+            min-height: 1000px;
+        }
+
+        /* Left Column */
+        .left-column {
+            width: 260px;
+            background-color: #f5f5f5;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 25px 25px 25px 40px;
+            border: 1px solid #dee2e6;
+            overflow: hidden;
+            background-position: center
+        }
+
+        .profile-section {
+            text-align: center;
+            padding: 20px 20px 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            background: #e9ecef;
+            border: 1px solid #dee2e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #6c757d;
+        } */
+
+        .name-title {
+            background: #f5f5f5;
+            padding: 0 0 25px 30px;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: 700;
+            color: #333132;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .title {
+            font-size: 18px;
+            color: #4d4d4f;
+            font-weight: 400;
+        }
+
+        /* Left sections */
+        .left-section {
+            margin-bottom: 0;
+        }
+
+        .section-header {
+            background-color: #454541;
+            color: white;
+            padding: 5px 14px;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 20px;
+            margin: 0 50px 15px 50px;
+            text-align: center;
+        }
+
+        .section-content {
+            padding: 0 25px 20px;
+            /* background-color: #f8f9fa; */
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: #454541;
+            font-weight: 400;
+        }
+
+        .contact-item .icon {
+            width: 16px;    
+            margin-right: 12px;
+            color: #454541;
+            flex-shrink: 0;
+            margin-top: 0px;
+            font-size: 16px;
+        }
+
+        .education-content h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #454541;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .education-content p {
+            font-size: 13px;
+            color: #454541;
+            /* margin-bottom: 4px; */
+            font-weight: 400;
+        }
+
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            font-size: 14px;
+            color: #454541;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .skills-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #454541;
+            font-weight: 600;
+        }
+
+        /* Right Column */
+        .right-column {
+            flex: 1;
+            padding: 20px 20px;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #454541;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            position: relative;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 1px;
+            background-color: #454541;
+            width: calc(100% - 200px);
+        }
+
+        .experience-item {
+            margin-bottom: 15px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* margin-bottom: 4px; */
+        }
+
+        .job-title {
+            font-size: 16px;
+            color: #212529;
+            font-weight: 400;
+        }
+
+        .job-date {
+            font-size: 16px;
+            font-style: italic;
+            color: #454541;
+            white-space: nowrap;
+            font-weight: 400;
+        }
+
+        .company {
+            font-size: 16px;
+            color: #454541;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .job-description {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-description li {
+            font-size: 12px;
+            color: #454541;
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .job-description li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #454541;
+            font-weight: 600;
+        }
+
+        .projects-section {
+            margin-top: 20px;
+        }
+
+        .projects-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .projects-list li {
+            font-size: 14px;
+            color: #454541;
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+            font-weight: 200;
+        }
+
+        .projects-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #454541;
+            font-weight: 600;
+        }
+
+        .references-section {
+            margin-top: 20px;
+        }
+
+        .references-container {
+            display: flex;
+            gap: 0px;
+        }
+
+        .reference-item {
+            flex: 1;
+        }
+
+        .reference-item h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #454541;
+            margin-bottom: 4px;
+        }
+
+        .reference-role {
+            font-size: 14px;
+            color: #454541;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .reference-contact {
+            font-size: 12px;
+            color: #454541;
+            margin-bottom: 2px;
+            font-weight: 400;
+        }
+
+        .reference-contact strong {
+            font-weight: 700;
+        }
+
+        @media (max-width: 750px) {
+            .cv-container {
+                flex-direction: column;
+                margin: 20px;
+            }
+            
+            .left-column {
+                width: 100%;
+            }
+            
+            .references-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .section-title::after {
+                width: calc(100% - 140px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="cv-container">
+<!-- Left Column -->
+<div class="left-column">
+
+<!-- <div class="profile-section">
+                <div class="profile-img">👤</div>
+            </div> -->
+<div class="name-title" style="padding-top: 35px;">
+<div class="name">Trinh-Cong Ho</div>
+<div class="title">CAD Operator / PCB Library</div>
+</div>
+<div class="left-section">
+<div class="section-header">CONTACT</div>
+<div class="section-content">
+<div class="contact-item">
+<div class="icon">☎</div>
+<div>+84 869-733-154</div>
+</div>
+<div class="contact-item">
+<div class="icon">✉</div>
+<div><a href="mailto:ctrinh01028485@gmail.com" style="color:inherit;text-decoration:none;">
+ctrinh01028485@gmail.com</a></div>
+</div>
+<div class="contact-item">
+<!-- <div class="icon">🇮🇳</div> -->
+<!-- <div class="icon"><i class="fab fa-github"></i></div> -->
+<div class="icon">🅶</div>
+<!-- <i class="fab fa-github"></i> -->
+<!-- <div class="icon"><i class="fa-brands fa-github"></i></div> -->
+<div><a href="https://github.com/GigaOhms" style="color:inherit;text-decoration:none;">
+github.com/GigaOhms</a></div>
+</div>
+</div>
+</div>
+<div class="left-section">
+<div class="section-header">EDUCATION</div>
+<div class="section-content">
+<div class="education-content">
+<h3>Industrial University of Ho Chi Minh City</h3>
+<p><strong>Electrical - Electronic engineering</strong></p>
+<p style="color: #737373;"><strong>Graduate</strong></p>
+<p>Sep. 2019 - Jan. 2024</p>
+</div>
+</div>
+</div>
+<div class="left-section">
+<div class="section-header">SKILLS</div>
+<div class="section-content">
+<ul class="skills-list"><li>English: 545 TOEIC, B2 APTIS</li><li>Proficient in Altium Designer and KiCad</li><li>Create schematic symbols, PCB footprints, and component libraries</li><li>Read datasheets, package drawings, and recommended land patterns</li><li>Verify pin mapping, pad dimensions, polarity, silkscreen, and courtyard</li><li>Basic knowledge of IPC footprint standards and PCB design rules</li><li>Basic C/C++ programming and embedded hardware knowledge</li><li>Hands-on experience in soldering, hardware testing, and debugging</li><li>Detail-oriented, careful, and able to work effectively in a team</li></ul>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="right-column">
+<div class="section-title">WORK EXPERIENCE</div>
+<div class="experience-item">
+<div class="job-header">
+<div class="job-title">Hardware Engineer Intern</div>
+<div class="job-date">Nov. 2022 - Feb. 2023</div>
+</div>
+<div class="company">MEI Group CO., LTD | HCMC</div>
+<ul class="job-description"><li>Supported schematic capture, component selection, and PCB layout activities.</li><li>Created and checked schematic symbols and PCB footprints for project components.</li><li>Read datasheets to verify pinouts, package dimensions, and recommended land patterns.</li><li>Assisted engineers in updating design files and component libraries.</li></ul>
+</div>
+<div class="experience-item">
+<div class="job-header">
+<div class="job-title">Power Electronics Lab Assistant</div>
+<div class="job-date">Sep. 2022 - May. 2023</div>
+</div>
+<div class="company">IUHPEAL Lab | Industrial University of HCMC</div>
+<ul class="job-description"><li>Prepared schematics and PCB layouts for power-electronics prototypes.</li><li>Checked component packages, connector orientation, and mechanical dimensions.</li><li>Supported soldering, measurement, hardware debugging, and test documentation.</li><li>Maintained component information and design revisions for laboratory projects.</li></ul>
+</div>
+<div class="experience-item">
+<div class="job-header">
+<div class="job-title">IoT Hardware Engineer</div>
+<div class="job-date">Jun. 2023 - Jan. 2024</div>
+</div>
+<div class="company">MEI Group CO., LTD | HCMC</div>
+<ul class="job-description"><li>Designed circuits and PCB layouts for IoT devices and control boards.</li><li>Created and updated schematic symbols, footprints, and libraries in Altium and KiCad.</li><li>Verified component packages, pin mapping, and footprint dimensions before fabrication.</li><li>Supported prototype assembly, testing, and hardware issue resolution.</li></ul>
+</div>
+<div class="projects-section">
+<div class="section-title">PROJECTS</div>
+<ul class="projects-list"><li><strong>PCB library creation in Altium and KiCad: schematic symbols, footprints, and component data.</strong></li><li><strong>Three-phase inverter using STM32F103: schematic, PCB layout, assembly, and testing.</strong></li><li><strong>Low-cost isolated oscilloscope dummy probe.</strong></li><li><strong>PFC and DC/DC converter for battery charging applications.</strong></li><li><strong>Hall-sensor measurement board for power-electronics systems.</strong></li><li><strong>Autonomous line-follower robot control board.</strong></li><li><strong>USB Type-C bench power supply with PPS and PD 3.0.</strong></li><li><strong>IoT control and monitoring circuit boards.</strong></li></ul>
+</div>
+<div class="references-section">
+<div class="section-title">REFERENCES</div>
+<div class="references-container">
+<div class="reference-item">
+<h4>Dr. Tan-Tai Tran</h4>
+<div class="reference-role">IUHPEAL / Lab Supervisor</div>
+<div class="reference-contact"><strong>Phone:</strong> 0839359105</div>
+<div class="reference-contact"><strong>Email:</strong>  trantantai@iuh.edu.vn</div>
+</div>
+<div class="reference-item">
+<h4>Tran Nam Hai</h4>
+<div class="reference-role">MEI Group CO.,LTD / Director</div>
+<div class="reference-contact"><strong>Phone:</strong> 0865578778</div>
+<div class="reference-contact"><strong>Email:</strong>  tr.namhai@meigroup.vn</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
