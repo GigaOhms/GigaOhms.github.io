@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="vi">
+
+<html lang="vi">  
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio cá nhân</title>
-  <style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio cá nhân</title>
+<style>
     :root {
       --bg: #0f172a;
       --bg-soft: #111827;
@@ -561,390 +565,720 @@
         min-height: auto;
       }
     }
+  
+    /* ===== Flat orange terminal theme ===== */
+    :root {
+      --bg: #2b2b2b;
+      --bg-soft: #303030;
+      --card: #2f2f2f;
+      --card-border: #474747;
+      --text: #f2f2f2;
+      --muted: #a9a9a9;
+      --accent: #9fd47a;
+      --accent-2: #9fd47a;
+      --shadow: none;
+      --radius: 2px;
+    }
+
+    body {
+      background: #2b2b2b;
+      color: var(--text);
+      font-family: 'Fira Code', monospace;
+    }
+
+    .nav {
+      background: #2b2b2b;
+      border-bottom: 1px solid #4a4a4a;
+      backdrop-filter: none;
+    }
+
+    .brand {
+      color: #1f1f1f;
+      background: var(--accent);
+      padding: 7px 10px;
+      font-weight: 600;
+    }
+
+    .brand span { color: #1f1f1f; }
+
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .btn,
+    .chip,
+    .icon-btn {
+      border-radius: 2px;
+      box-shadow: none;
+      font-family: inherit;
+    }
+
+    .btn:hover { transform: none; }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #1f1f1f;
+      border: 1px solid var(--accent);
+      box-shadow: none;
+    }
+
+    .btn-secondary,
+    .chip,
+    .icon-btn {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid #5a4438;
+    }
+
+    .btn-secondary:hover,
+    .chip:hover,
+    .chip.active,
+    .icon-btn:hover {
+      background: #3a302b;
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .glass,
+    .stat,
+    .info-item {
+      background: #2f2f2f;
+      border: 1px solid #474747;
+      border-radius: 2px;
+      box-shadow: none;
+    }
+
+    .hero-card,
+    .profile-card {
+      border-top: 3px solid var(--accent);
+    }
+
+    .tag {
+      border-radius: 2px;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid #5a4438;
+    }
+
+    .gradient-text,
+    .profile-role,
+    .section-head h2,
+    .project-title {
+      color: var(--accent);
+      background: none;
+      -webkit-background-clip: initial;
+      background-clip: initial;
+    }
+
+    .avatar-wrap {
+      border-radius: 2px;
+      padding: 4px;
+      background: var(--accent);
+    }
+
+    .avatar { border-radius: 0; }
+
+    .stat,
+    .info-item {
+      border-radius: 2px;
+    }
+
+    .section-head {
+      border-bottom: 2px dotted var(--accent);
+      padding-bottom: 12px;
+    }
+
+    .project-card {
+      border-top: 3px solid #474747;
+      transition: border-color .15s ease;
+    }
+
+    .project-card:hover {
+      transform: none;
+      border-color: var(--accent);
+    }
+
+    .project-card:hover .thumb img,
+    .thumb img {
+      transform: none;
+      transition: none;
+    }
+
+    .project-index {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 6px;
+      max-width: 48%;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: var(--accent);
+      font-size: .78rem;
+    }
+
+    .project-index span {
+      padding: 3px 6px;
+      border: 1px solid #5a4438;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .badge-row { display: none; }
+
+    .overlay,
+    .lightbox {
+      backdrop-filter: none;
+      background: rgba(20,20,20,.94);
+    }
+
+    .modal,
+    .project-gallery img,
+    .single-viewer-image,
+    .lightbox img {
+      border-radius: 2px;
+      box-shadow: none;
+    }
+
+    code {
+      color: var(--accent);
+      font-family: inherit;
+    }
+
+  
+    /* ===== Green terminal refinements ===== */
+    :root {
+      /* Change only this value to update the site's primary color */
+      --accent: #9fd47a;
+      --accent-2: var(--accent);
+      --soft-radius: 4px;
+    }
+
+    .brand,
+    .btn,
+    .chip,
+    .icon-btn,
+    .tag,
+    .glass,
+    .stat,
+    .info-item,
+    .project-card,
+    .modal,
+    .project-gallery img,
+    .single-viewer-image,
+    .lightbox img {
+      border-radius: var(--soft-radius);
+    }
+
+    .avatar-wrap {
+      border-radius: 6px;
+    }
+
+    .avatar {
+      border-radius: 3px;
+    }
+
+    .stats {
+      align-items: stretch;
+    }
+
+    .stat {
+      min-height: 145px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .stat strong {
+      margin-bottom: 8px;
+    }
+
+    .stat span {
+      margin-top: auto;
+      display: block;
+    }
+
+  
+    /* ===== Hero section refinements ===== */
+
+    /* Remove the box around the introductory label */
+    .tag {
+      border: none;
+      background: transparent;
+      padding: 0;
+      margin-bottom: 18px;
+      border-radius: 0;
+    }
+
+    /* Make avatar circular */
+    .avatar-wrap {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      padding: 4px;
+      overflow: hidden;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* Keep the introduction and contact cards equal in height */
+    .hero-grid {
+      align-items: stretch;
+    }
+
+    .hero-card,
+    .profile-card {
+      height: 100%;
+    }
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand">My<span>Portfolio</span></div>
-      <div class="nav-links">
-        <a href="#about">Giới thiệu</a>
-        <a href="#projects">Dự án</a>
-        <a href="#contact">Liên hệ</a>
-        <button class="btn btn-primary" id="openCvTop">Xem CV</button>
-      </div>
-    </div>
-  </nav>
+<nav class="nav">
+<div class="container nav-inner">
+<div class="brand">My<span>Portfolio</span></div>
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+<button class="btn btn-primary" id="openCvTop">View CV</button>
+</div>
+</div>
+</nav>
+<header class="hero" id="about">
+<div class="container hero-grid">
+<div class="glass hero-card">
 
-  <header class="hero" id="about">
-    <div class="container hero-grid">
-      <div class="glass hero-card">
-        <div class="tag">Portfolio cá nhân • Dự án • Hình ảnh • CV</div>
-        <h1>
+<h1>
           Hello, I am            
           <span class="gradient-text" id="nameText">Tên của bạn</span>
-        </h1>
-        <p class="lead" id="introText">
+</h1>
+<p class="lead" id="introText">
           Đây là không gian để giới thiệu những dự án tôi đã thực hiện, hình ảnh sản phẩm, mô tả ngắn gọn cho từng dự án và một số thông tin cá nhân nổi bật.
         </p>
-        <div class="hero-actions">
-          <button class="btn btn-primary" id="openCvMain">Open CV</button>
-          <a class="btn btn-secondary" href="#projects">View projects</a>
-        </div>
-        <div class="stats">
-          <div class="stat">
-            <strong style="font-size: 45px;">1+</strong>
-            <span style="font-size: 16px;">Years of Experience</span>
-          </div>
-          <div class="stat">
-            <strong id="roleText">Hardware Engineering</strong>
-            <span style="font-size: 17px;">Field</span>
-          </div>
-          <div class="stat">
-            <strong>Power Electronics</strong>
-            <span style="font-size: 17px;">Main Expertise</span>
-          </div>
-        </div>
-      </div>
+<div class="hero-actions">
+<button class="btn btn-primary" id="openCvMain">Open CV</button>
+<a class="btn btn-secondary" href="#projects">View projects</a>
+</div>
+<div class="stats">
+<div class="stat">
+<strong style="font-size: 45px;">1+</strong>
+<span style="font-size: 16px;">Years of Experience</span>
+</div>
+<div class="stat">
+<strong id="roleText">Hardware Engineering</strong>
+<span style="font-size: 17px;">Field</span>
+</div>
+<div class="stat">
+<strong>Power Electronics</strong>
+<span style="font-size: 17px;">Main Expertise</span>
+</div>
+</div>
+</div>
+<aside class="glass profile-card" id="contact">
+<div class="avatar-wrap">
+<img alt="Avatar" class="avatar" id="avatarImage" src="avt.jpg"/>
+</div>
+<div class="profile-name" id="profileName">Hồ Công Trình</div>
+<div class="profile-role" id="profileRole">Công việc / Vai trò</div>
+<div class="info-list">
+<div class="info-item"><strong>Email:</strong> <span id="emailText">ctrinh01028485@gmail.com</span></div>
+<div class="info-item"><strong>Phone:</strong> <span id="phoneText">0123 456 789</span></div>
+<div class="info-item"><strong>Location:</strong> <span id="locationText">Ho Chi Minh, Viet Nam</span></div>
+<div class="info-item"><strong>Goal:</strong> <span id="goalText">Giới thiệu các dự án đã thực hiện một cách rõ ràng và trực quan.</span></div>
+</div>
+</aside>
+</div>
+</header>
+<section id="projects">
+<div class="container">
+<div class="section-head">
+<div>
+<h2>Outstanding projects</h2>
+<p>Click on the image to view more images, and click on the name to open the project link (if available).</p>
+</div>
+</div>
+<div class="toolbar">
+<button class="chip active" data-filter="all">All</button>
+<button class="chip" data-filter="web">Web</button>
+<button class="chip" data-filter="design">Design</button>
+<button class="chip" data-filter="other">Other</button>
+</div>
+<div class="grid" id="projectGrid"></div>
+<div class="glass empty-state" id="emptyState">Not found any project images in the <strong>img</strong> folder.</div>
+</div>
+</section>
+<footer class="footer container">
+<p>© <span id="yearNow"></span> • Thank you for taking the time to view my profile</p>
+</footer>
+<div aria-hidden="true" class="overlay" id="cvOverlay">
+<div class="modal">
+<div class="modal-head">
+<div class="modal-title">My CV</div>
+<div class="modal-actions">
+<a class="icon-btn" href="cv.html" rel="noopener noreferrer" target="_blank">open new tab</a>
+<button class="icon-btn" id="closeCv">Close</button>
+</div>
+</div>
+<iframe src="cv_hardware.html" title="CV"></iframe>
+</div>
+</div>
+<div class="lightbox" id="lightbox">
+<button class="icon-btn lightbox-close" id="closeLightbox">Close gallery</button>
+<div class="glass project-gallery" id="projectGallery"></div>
+</div>
+<div class="lightbox" id="singleImageViewer">
+<button class="icon-btn lightbox-close" id="closeSingleViewer">Close image</button>
+<img alt="Preview image" class="single-viewer-image" id="singleViewerImage" src=""/>
+</div>
 
-      <aside class="glass profile-card" id="contact">
-        <div class="avatar-wrap">
-          <img class="avatar" id="avatarImage" src="avt.jpg" alt="Avatar" />
-        </div>
-        <div class="profile-name" id="profileName">Hồ Công Trình</div>
-        <div class="profile-role" id="profileRole">Công việc / Vai trò</div>
-        <div class="info-list">
-          <div class="info-item"><strong>Email:</strong> <span id="emailText">ctrinh01028485@gmail.com</span></div>
-          <div class="info-item"><strong>Phone:</strong> <span id="phoneText">0123 456 789</span></div>
-          <div class="info-item"><strong>Location:</strong> <span id="locationText">Ho Chi Minh, Viet Nam</span></div>
-          <div class="info-item"><strong>Goal:</strong> <span id="goalText">Giới thiệu các dự án đã thực hiện một cách rõ ràng và trực quan.</span></div>
-        </div>
-      </aside>
-    </div>
-  </header>
+<script id="projects-data" type="application/json">[{"id": "3698ab581bf046feab9e69121cc99c24", "order": 1, "title": "2-channel high-power IGBT driver", "hashtags": ["power-electronics", "4-layer"], "description": "This 2-channel IGBT gate control module amplifies low-power control signals to control the charging of high-power IGBTs. Using a 12V power supply, it provides a high charging current of up to 4A and ensures safe, isolated high-power operation.", "link": ""}, {"id": "0cd729e0978e41c987db11435f2c668f", "order": 2, "title": "Line Flow Robot", "hashtags": ["robot", "stm32"], "description": "SharksBot V4 is a compact, self-driving line-following robot, capable of precise navigation using infrared sensors. It is specifically designed for educational and research purposes in PCB hardware design, embedded control algorithms (e.g., PID), and RTOS in robotics.", "link": "https://github.com/GigaOhms/Line-Flow-Robot"}, {"id": "622012f8112d4ae48601e020274e77a9", "order": 3, "title": "Isolated voltage sensor", "hashtags": ["power-electronics", "dsp"], "description": "Signal conditioning circuit and sample firmware for converting isolated high-voltage measurements to single-ended ADC inputs. Includes AC/DC sensing with offset bias and moving RMS calculation.", "link": "https://github.com/GigaOhms/Isolated-Voltage-Sensor"}, {"id": "bf5887f4e04a42bc9abc70390e176861", "order": 4, "title": "E-bike charger", "hashtags": ["power-electronics", "dsp"], "description": "The converter utilizes a boost PFC structure combined with dual switch forward to achieve higher performance without compromising grid quality.", "link": ""}, {"id": "b74da0e3745d4710af5793337f9f7f27", "order": 5, "title": "Pocket PD Pico", "hashtags": ["power-electronics"], "description": "PocketPD turns any PPS-capable USB-C charger into a pocket-sized bench power supply. It offers simple controls via a rotary encoder knob and two buttons, while the OLED display shows live readings of voltage, current, power, energy, and more!", "link": "https://github.com/CentyLab/PocketPD/tree/main"}, {"id": "cd42b406aba4480197a1e5aed0513389", "order": 6, "title": "Expansion board for Raspberry Pi", "hashtags": ["esp32"], "description": "This expansion board provides LoRa, Wi-Fi, and Bluetooth connectivity for the Raspberry Pi, using ESP32 modules, LoRa SPI, and LoRa UART.", "link": ""}, {"id": "89f39b465c324546a1a2206b9770303b", "order": 7, "title": "SENTSOR ESP32-micro", "hashtags": ["4-layer", "esp32"], "description": "This repository is a learning resource to explore PCB design with KiCad through a practical project: a compact and powerful ESP32-based board.", "link": "https://github.com/GigaOhms/SENTSOR-ESP32WR32UE"}, {"id": "13705f0772164235b2d859791b930510", "order": 8, "title": "IoT control and monitor solution", "hashtags": ["iot"], "description": "This device collects data via water industry sensor connections, communicates data via RS485, and integrates 4G, Ethernet, and LoRa connectivity for real-time data transmission.", "link": ""}, {"id": "d3b62c63dd5144efaf90d12e01b6e601", "order": 9, "title": "Low-power 3-phase inverter", "hashtags": ["power-electronics", "stm32"], "description": "Low-power 3-phase inverter for educational purposes, hardware uses STM32F103 microcontroller and IR2010 driver IC.", "link": ""}, {"id": "4907615c44384ca8a696ca59f7ea1b56", "order": 10, "title": "10-channel wifi/lora control", "hashtags": ["IoT", "esp32"], "description": "The 10-channel controller is an intelligent remote control device using the ESP8266 platform, supporting LoRa or WiFi connectivity. The device integrates 10 independent relay/MOSFET channels for controlling industrial equipment.", "link": "https://meigroupiot.com/bo-dieu-khien-10-kenh-su-dung-lora-hoac-wifi"}, {"id": "acb796e3311d4515b9ec9cfeafa9a860", "order": 11, "title": "16-channel Lora/Modbus control", "hashtags": ["iot"], "description": "The 16-channel controller is an intelligent remote control device using the arduino platform, supporting LoRa or Modbus connectivity. The device integrates 16 independent relay channels for controlling industrial equipment.", "link": ""}, {"id": "51c49567a546455da529707645baaab9", "order": 12, "title": "Power measurement and analysis board", "hashtags": ["dsp", "power-electronics"], "description": "This module senses voltage and current components using Hall sensors, and is used for research in the field of power electronics.", "link": ""}, {"id": "e809a22fd5704481bb2ce611cd19f981", "order": 13, "title": "Smart sliding door control", "hashtags": ["iot"], "description": "The device supports the control of the sliding door, forward and reverse operation, and remote control. It integrates 4G, Wifi, Ethernet, or LoRa, allowing for manual control or automatic settings.", "link": "https://meigroupiot.com/mach-dieu-khien-he-cua-lua-ung-dung-iot"}, {"id": "6b2c6fe927ce4414ade253cb4297eb58", "order": 14, "title": "Isolating dummy Probe", "hashtags": ["analog"], "description": "A pseudo-isolation device for oscilloscopes, using op-amps and a resistor network, creates pseudo-isolation for the system to measure sensitive locations.", "link": ""}, {"id": "15fc6dfb6d5241e2b4c9d8caaaf7983e", "order": 15, "title": "3-phase voltage source", "hashtags": ["analog"], "description": "This low-power three-phase power supply uses operational amplifier op-amps to generate a low-power three-phase voltage source, suitable for teaching and learning purposes.", "link": ""}]</script>
+<script>
+  const profile = {
+    name: 'Cong-Trinh Ho',
+    role: 'Hardware Design Engineer',
+    email: 'ctrinh01028485@gmail.com',
+    phone: '+84 869-733-154',
+    location: 'Ho Chi Minh, Viet Nam',
+    intro: 'I am passionate about hardware design, embedded systems, and power electronics. I enjoy developing practical electronic solutions, from PCB design to power conversion systems, while continuously improving my technical and problem-solving skills.',
+    goal: 'To become a specialist in hardware design and power electronics.'
+  };
 
-  <section id="projects">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>Outstanding projects</h2>
-          <p>Hệ thống sẽ tự hiển thị ảnh theo dạng <code>img/img1.png</code>, <code>img/img2.png</code>... cho đến khi không còn ảnh tiếp theo.</p>
-        </div>
-      </div>
+  const els = {
+    nameText: document.getElementById('nameText'),
+    introText: document.getElementById('introText'),
+    profileName: document.getElementById('profileName'),
+    profileRole: document.getElementById('profileRole'),
+    emailText: document.getElementById('emailText'),
+    phoneText: document.getElementById('phoneText'),
+    locationText: document.getElementById('locationText'),
+    goalText: document.getElementById('goalText'),
+    projectGrid: document.getElementById('projectGrid'),
+    emptyState: document.getElementById('emptyState'),
+    cvOverlay: document.getElementById('cvOverlay'),
+    lightbox: document.getElementById('lightbox'),
+    projectGallery: document.getElementById('projectGallery'),
+    avatarImage: document.getElementById('avatarImage'),
+    singleImageViewer: document.getElementById('singleImageViewer'),
+    singleViewerImage: document.getElementById('singleViewerImage')
+  };
 
-      <div class="toolbar">
-        <button class="chip active" data-filter="all">Tất cả</button>
-        <button class="chip" data-filter="web">Web</button>
-        <button class="chip" data-filter="design">Design</button>
-        <button class="chip" data-filter="other">Khác</button>
-      </div>
+  function injectProfile() {
+    els.nameText.textContent = profile.name;
+    els.introText.textContent = profile.intro;
+    els.profileName.textContent = profile.name;
+    els.profileRole.textContent = profile.role;
+    els.emailText.textContent = profile.email;
+    els.phoneText.textContent = profile.phone;
+    els.locationText.textContent = profile.location;
+    els.goalText.textContent = profile.goal;
+  }
 
-      <div class="grid" id="projectGrid"></div>
-      <div class="glass empty-state" id="emptyState">Chưa tìm thấy ảnh dự án trong thư mục <strong>img</strong>.</div>
-    </div>
-  </section>
+  function tryAvatarFallbacks() {
+    const fallbacks = ['avt.jpg', 'avto.jpg'];
+    let current = 0;
 
-  <footer class="footer container">
-    <p>© <span id="yearNow"></span> • Cảm ơn bạn đã dành thời gian xem qua hồ sơ của mình</p>
-  </footer>
-
-  <div class="overlay" id="cvOverlay" aria-hidden="true">
-    <div class="modal">
-      <div class="modal-head">
-        <div class="modal-title">CV của tôi</div>
-        <div class="modal-actions">
-          <a class="icon-btn" href="cv.html" target="_blank" rel="noopener noreferrer">Mở tab mới</a>
-          <button class="icon-btn" id="closeCv">Đóng</button>
-        </div>
-      </div>
-      <iframe src="cv.html" title="CV"></iframe>
-    </div>
-  </div>
-
-  <div class="lightbox" id="lightbox">
-    <button class="icon-btn lightbox-close" id="closeLightbox">Đóng gallery</button>
-    <div class="glass project-gallery" id="projectGallery"></div>
-  </div>
-
-  <div class="lightbox" id="singleImageViewer">
-    <button class="icon-btn lightbox-close" id="closeSingleViewer">Đóng ảnh</button>
-    <img class="single-viewer-image" id="singleViewerImage" src="" alt="Preview image" />
-  </div>
-
-  <script>
-    const profile = {
-      name: 'Cong-Trinh Ho',
-      role: 'Hardware Design Engineer',
-      email: 'ctrinh01028485@gmail.com',
-      phone: '+84 869-733-154',
-      location: 'Ho Chi Minh, Viet Nam',
-      intro: 'I am passionate about hardware design, embedded systems, and power electronics. I enjoy developing practical electronic solutions, from PCB design to power conversion systems, while continuously improving my technical and problem-solving skills.',
-      goal: 'To become a specialist in hardware design and power electronics.'
-    };
-
-    const projectDescriptions = {
-      1: {
-        title: 'Dự án 1',
-        desc: 'Mô tả ngắn về dự án số 1. Bạn có thể thay phần này bằng tên dự án thật, vai trò của bạn và kết quả đạt được.',
-        tags: ['web', 'ui'],
-        label: 'Web'
-      },
-      2: {
-        title: 'Dự án 2',
-        desc: 'Mô tả ngắn về dự án số 2. Ví dụ: thiết kế giao diện, xây dựng landing page hoặc triển khai portfolio cá nhân.',
-        tags: ['design'],
-        label: 'Design'
-      },
-      3: {
-        title: 'Dự án 3',
-        desc: 'Mô tả ngắn về dự án số 3. Có thể ghi rõ công cụ sử dụng, mục tiêu dự án hoặc đối tượng người dùng.',
-        tags: ['other'],
-        label: 'Khác'
+    els.avatarImage.onerror = () => {
+      current += 1;
+      if (current < fallbacks.length) {
+        els.avatarImage.src = fallbacks[current];
       }
     };
 
-    const els = {
-      nameText: document.getElementById('nameText'),
-      introText: document.getElementById('introText'),
-      roleText: document.getElementById('roleText'),
-      profileName: document.getElementById('profileName'),
-      profileRole: document.getElementById('profileRole'),
-      emailText: document.getElementById('emailText'),
-      phoneText: document.getElementById('phoneText'),
-      locationText: document.getElementById('locationText'),
-      goalText: document.getElementById('goalText'),
-      projectGrid: document.getElementById('projectGrid'),
-      emptyState: document.getElementById('emptyState'),
-      projectCount: document.getElementById('projectCount'),
-      cvOverlay: document.getElementById('cvOverlay'),
-      lightbox: document.getElementById('lightbox'),
-      projectGallery: document.getElementById('projectGallery'),
-      avatarImage: document.getElementById('avatarImage'),
-      singleImageViewer: document.getElementById('singleImageViewer'),
-      singleViewerImage: document.getElementById('singleViewerImage')
-    };
+    els.avatarImage.src = fallbacks[current];
+  }
 
-    function injectProfile() {
-      els.nameText.textContent = profile.name;
-      els.introText.textContent = profile.intro;
-      // els.roleText.textContent = profile.role;
-      els.profileName.textContent = profile.name;
-      els.profileRole.textContent = profile.role;
-      els.emailText.textContent = profile.email;
-      els.phoneText.textContent = profile.phone;
-      els.locationText.textContent = profile.location;
-      els.goalText.textContent = profile.goal;
+  function escapeHtml(value = '') {
+    return String(value).replace(/[&<>"']/g, char => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    })[char]);
+  }
+
+  function normalizeProject(raw, index) {
+    const source = raw.hashtags ?? raw.tags ?? [];
+    const hashtags = Array.isArray(source)
+      ? source
+      : String(source).split(',');
+
+    return {
+      order: Number(raw.order || index + 1),
+      title: String(raw.title || raw.name || '').trim(),
+      hashtags: hashtags
+        .map(tag => String(tag).trim().replace(/^#/, ''))
+        .filter(Boolean),
+      description: String(raw.description || raw.desc || '').trim(),
+      link: String(raw.link || raw.url || '').trim()
+    };
+  }
+
+  async function imageExists(src) {
+    return new Promise(resolve => {
+      const image = new Image();
+      image.onload = () => resolve(true);
+      image.onerror = () => resolve(false);
+      image.src = src;
+    });
+  }
+
+  async function getProjectImages(order, maxChildren = 100) {
+    const images = [];
+    const mainImage = `img/img${order}.png`;
+
+    if (!(await imageExists(mainImage))) {
+      return images;
     }
 
-    function tryAvatarFallbacks() {
-      const fallbacks = ['avt.jpg', 'avto.jpg'];
-      let current = 0;
-      els.avatarImage.onerror = () => {
-        current += 1;
-        if (current < fallbacks.length) {
-          els.avatarImage.src = fallbacks[current];
-        } else {
-          els.avatarImage.onerror = null;
-          els.avatarImage.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(`
-            <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
-              <rect width="400" height="400" fill="#0f172a"/>
-              <circle cx="200" cy="145" r="68" fill="#94a3b8"/>
-              <path d="M90 335c18-56 64-84 110-84s92 28 110 84" fill="#94a3b8"/>
-            </svg>
-          `);
+    images.push(mainImage);
+
+    for (let child = 1; child <= maxChildren; child += 1) {
+      const childImage = `img/img${order}_${child}.png`;
+
+      if (!(await imageExists(childImage))) {
+        break;
+      }
+
+      images.push(childImage);
+    }
+
+    return images;
+  }
+
+  function createCard(project) {
+    const card = document.createElement('article');
+    card.className = 'glass project-card';
+    card.dataset.tags = project.hashtags
+      .map(tag => tag.toLowerCase())
+      .join(',');
+
+    const hashtags = project.hashtags
+      .map(tag => `<span>#${escapeHtml(tag)}</span>`)
+      .join('');
+
+    const safeTitle = escapeHtml(project.title);
+    const titleHtml = project.link
+      ? `<a href="${escapeHtml(project.link)}" target="_blank" rel="noopener noreferrer">${safeTitle}</a>`
+      : safeTitle;
+
+    card.innerHTML = `
+      <div class="thumb">
+        <img src="${escapeHtml(project.mainImage)}"
+             alt="${safeTitle}"
+             loading="lazy">
+      </div>
+      <div class="project-body">
+        <div class="project-top">
+          <h3 class="project-title">${titleHtml}</h3>
+          <div class="project-index">${hashtags}</div>
+        </div>
+        <p class="project-desc">${escapeHtml(project.description)}</p>
+      </div>
+    `;
+
+    card.querySelector('.thumb').addEventListener('click', () => {
+      openProjectGallery(project);
+    });
+
+    return card;
+  }
+
+  async function loadProjects() {
+    els.projectGrid.innerHTML = '';
+
+    try {
+      const dataElement = document.getElementById('projects-data');
+
+      if (!dataElement) {
+        throw new Error('Không tìm thấy dữ liệu project được nhúng trong index.html.');
+      }
+
+      const rawProjects = JSON.parse(dataElement.textContent || '[]');
+
+      if (!Array.isArray(rawProjects)) {
+        throw new Error('Dữ liệu project trong index.html không hợp lệ.');
+      }
+
+      const metadata = rawProjects
+        .map(normalizeProject)
+        .sort((a, b) => a.order - b.order);
+
+      const projects = [];
+
+      for (const project of metadata) {
+        const images = await getProjectImages(project.order);
+
+        if (!images.length) {
+          continue;
         }
-      };
-      els.avatarImage.src = fallbacks[current];
-    }
 
-    function openCv() {
-      els.cvOverlay.classList.add('show');
-      els.cvOverlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCv() {
-      els.cvOverlay.classList.remove('show');
-      els.cvOverlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    function openProjectGallery(index, mainSrc) {
-      els.projectGallery.innerHTML = '';
-
-      const images = [mainSrc];
-
-      for (let i = 1; i <= 20; i++) {
-        images.push(`img/img${index}_${i}.png`);
+        projects.push({
+          ...project,
+          mainImage: images[0],
+          images
+        });
       }
 
-      images.forEach(src => {
-        const probe = new Image();
+      if (!projects.length) {
+        els.emptyState.style.display = 'block';
+        els.emptyState.textContent =
+          'Không có project hợp lệ hoặc không tìm thấy ảnh trong thư mục img.';
+        buildFilters([]);
+        return;
+      }
 
-        probe.onload = () => {
-          const item = document.createElement('img');
-          item.src = src;
-          item.alt = `Project ${index}`;
+      els.emptyState.style.display = 'none';
 
-          item.addEventListener('click', () => {
-            openSingleImage(src);
-          });
-
-          els.projectGallery.appendChild(item);
-        };
-
-        probe.src = src;
+      projects.forEach(project => {
+        els.projectGrid.appendChild(createCard(project));
       });
 
-      els.lightbox.classList.add('show');
-      document.body.style.overflow = 'hidden';
+      buildFilters(projects);
+    } catch (error) {
+      console.error(error);
+      els.emptyState.style.display = 'block';
+      els.emptyState.textContent =
+        'Không đọc được dữ liệu project được nhúng trong index.html.';
     }
+  }
 
-    function closeLightbox() {
-      els.lightbox.classList.remove('show');
-      els.projectGallery.innerHTML = '';
-      document.body.style.overflow = '';
-    }
+  function buildFilters(projects) {
+    const toolbar = document.querySelector('.toolbar');
+    const tags = [...new Set(
+      projects.flatMap(project =>
+        project.hashtags.map(tag => tag.toLowerCase())
+      )
+    )];
 
-    function openSingleImage(src) {
-      els.singleViewerImage.src = src;
-      els.singleImageViewer.classList.add('show');
-    }
+    toolbar.innerHTML =
+      '<button class="chip active" data-filter="all">Tất cả</button>' +
+      tags.map(tag =>
+        `<button class="chip" data-filter="${escapeHtml(tag)}">#${escapeHtml(tag)}</button>`
+      ).join('');
 
-    function closeSingleImage() {
-      els.singleImageViewer.classList.remove('show');
-      els.singleViewerImage.src = '';
-    }
+    const chips = toolbar.querySelectorAll('.chip');
+    const cards = [...document.querySelectorAll('.project-card')];
 
-    function createCard(index, src, meta) {
-      const card = document.createElement('article');
-      card.className = 'glass project-card';
-      card.dataset.category = (meta.tags?.[0] || 'other').toLowerCase();
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(item => item.classList.remove('active'));
+        chip.classList.add('active');
 
-      const badges = (meta.tags || ['other'])
-        .map(tag => `<span class="badge">${tag}</span>`)
-        .join('');
+        const filter = chip.dataset.filter;
+        let visible = 0;
 
-      card.innerHTML = `
-        <div class="thumb">
-          <img src="${src}" alt="${meta.title}" loading="lazy" />
-        </div>
-        <div class="project-body">
-          <div class="project-top">
-            <h3 class="project-title">${meta.title}</h3>
-            <div class="project-index">#${String(index).padStart(2, '0')}</div>
-          </div>
-          <p class="project-desc">${meta.desc}</p>
-          <div class="badge-row">${badges}</div>
-        </div>
-      `;
+        cards.forEach(card => {
+          const cardTags = card.dataset.tags.split(',').filter(Boolean);
+          const show = filter === 'all' || cardTags.includes(filter);
+          card.style.display = show ? '' : 'none';
 
-      const thumb = card.querySelector('.thumb');
-      thumb.addEventListener('click', () => openProjectGallery(index, src));
-      return card;
-    }
-
-    function loadProjects(max = 60) {
-      let index = 1;
-      let loaded = 0;
-
-      function tryNext() {
-        if (index > max) {
-          finalize();
-          return;
-        }
-
-        const src = `img/img${index}.png`;
-        const probe = new Image();
-
-        probe.onload = () => {
-          const meta = projectDescriptions[index] || {
-            title: `Dự án ${index}`,
-            desc: `Đây là hình ảnh cho dự án số ${index}. Bạn có thể chỉnh nội dung mô tả trong biến projectDescriptions bên dưới phần script.`,
-            tags: ['other'],
-            label: 'Khác'
-          };
-
-          els.projectGrid.appendChild(createCard(index, src, meta));
-          loaded += 1;
-          index += 1;
-          tryNext();
-        };
-
-        probe.onerror = () => {
-          finalize();
-        };
-
-        probe.src = src;
-      }
-
-      function finalize() {
-        // els.projectCount.textContent = `${loaded}+`;
-        if (loaded === 0) {
-          els.emptyState.style.display = 'block';
-        }
-        bindFilters();
-      }
-
-      tryNext();
-    }
-
-    function bindFilters() {
-      const chips = document.querySelectorAll('.chip');
-      const cards = Array.from(document.querySelectorAll('.project-card'));
-
-      chips.forEach(chip => {
-        chip.addEventListener('click', () => {
-          chips.forEach(c => c.classList.remove('active'));
-          chip.classList.add('active');
-          const filter = chip.dataset.filter;
-          let visible = 0;
-
-          cards.forEach(card => {
-            const match = filter === 'all' || card.dataset.category === filter;
-            card.style.display = match ? '' : 'none';
-            if (match) visible += 1;
-          });
-
-          els.emptyState.style.display = visible === 0 ? 'block' : 'none';
-          if (visible === 0) {
-            els.emptyState.textContent = 'Không có dự án nào thuộc nhóm này.';
+          if (show) {
+            visible += 1;
           }
         });
+
+        els.emptyState.style.display = visible ? 'none' : 'block';
+
+        if (!visible) {
+          els.emptyState.textContent = 'Không có project nào thuộc hashtag này.';
+        }
       });
+    });
+  }
+
+  function openProjectGallery(project) {
+    els.projectGallery.innerHTML = '';
+
+    project.images.forEach(src => {
+      const image = document.createElement('img');
+      image.src = src;
+      image.alt = project.title;
+      image.addEventListener('click', () => openSingleImage(src));
+      els.projectGallery.appendChild(image);
+    });
+
+    els.lightbox.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    els.lightbox.classList.remove('show');
+    els.projectGallery.innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  function openSingleImage(src) {
+    els.singleViewerImage.src = src;
+    els.singleImageViewer.classList.add('show');
+  }
+
+  function closeSingleImage() {
+    els.singleImageViewer.classList.remove('show');
+    els.singleViewerImage.src = '';
+  }
+
+  function openCv() {
+    els.cvOverlay.classList.add('show');
+    els.cvOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCv() {
+    els.cvOverlay.classList.remove('show');
+    els.cvOverlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('openCvTop').addEventListener('click', openCv);
+  document.getElementById('openCvMain').addEventListener('click', openCv);
+  document.getElementById('closeCv').addEventListener('click', closeCv);
+  document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+  document.getElementById('closeSingleViewer').addEventListener('click', closeSingleImage);
+
+  els.cvOverlay.addEventListener('click', event => {
+    if (event.target === els.cvOverlay) closeCv();
+  });
+
+  els.lightbox.addEventListener('click', event => {
+    if (event.target === els.lightbox) closeLightbox();
+  });
+
+  els.singleImageViewer.addEventListener('click', event => {
+    if (event.target === els.singleImageViewer) closeSingleImage();
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      closeCv();
+      closeLightbox();
+      closeSingleImage();
     }
+  });
 
-    document.getElementById('openCvTop').addEventListener('click', openCv);
-    document.getElementById('openCvMain').addEventListener('click', openCv);
-    document.getElementById('closeCv').addEventListener('click', closeCv);
-    document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
-    document.getElementById('closeSingleViewer').addEventListener('click', closeSingleImage);
+  document.getElementById('yearNow').textContent = new Date().getFullYear();
 
-    els.cvOverlay.addEventListener('click', (e) => {
-      if (e.target === els.cvOverlay) closeCv();
-    });
+  injectProfile();
+  tryAvatarFallbacks();
+  loadProjects();
+</script>
 
-    els.lightbox.addEventListener('click', (e) => {
-      if (e.target === els.lightbox) closeLightbox();
-    });
-
-    els.singleImageViewer.addEventListener('click', (e) => {
-      if (e.target === els.singleImageViewer) closeSingleImage();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        closeCv();
-        closeLightbox();
-        closeSingleImage();
-      }
-    });
-
-    document.getElementById('yearNow').textContent = new Date().getFullYear();
-
-    injectProfile();
-    tryAvatarFallbacks();
-    loadProjects();
-  </script>
 </body>
 </html>

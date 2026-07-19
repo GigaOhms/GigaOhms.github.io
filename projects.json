@@ -1,0 +1,160 @@
+[
+  {
+    "id": "3698ab581bf046feab9e69121cc99c24",
+    "order": 1,
+    "title": "2-channel high-power IGBT driver",
+    "hashtags": [
+      "power-electronics",
+      "4-layer"
+    ],
+    "description": "This 2-channel IGBT gate control module amplifies low-power control signals to control the charging of high-power IGBTs. Using a 12V power supply, it provides a high charging current of up to 4A and ensures safe, isolated high-power operation.",
+    "link": ""
+  },
+  {
+    "id": "0cd729e0978e41c987db11435f2c668f",
+    "order": 2,
+    "title": "Line Flow Robot",
+    "hashtags": [
+      "robot",
+      "stm32"
+    ],
+    "description": "SharksBot V4 is a compact, self-driving line-following robot, capable of precise navigation using infrared sensors. It is specifically designed for educational and research purposes in PCB hardware design, embedded control algorithms (e.g., PID), and RTOS in robotics.",
+    "link": "https://github.com/GigaOhms/Line-Flow-Robot"
+  },
+  {
+    "id": "622012f8112d4ae48601e020274e77a9",
+    "order": 3,
+    "title": "Isolated voltage sensor",
+    "hashtags": [
+      "power-electronics",
+      "dsp"
+    ],
+    "description": "Signal conditioning circuit and sample firmware for converting isolated high-voltage measurements to single-ended ADC inputs. Includes AC/DC sensing with offset bias and moving RMS calculation.",
+    "link": "https://github.com/GigaOhms/Isolated-Voltage-Sensor"
+  },
+  {
+    "id": "bf5887f4e04a42bc9abc70390e176861",
+    "order": 4,
+    "title": "E-bike charger",
+    "hashtags": [
+      "power-electronics",
+      "dsp"
+    ],
+    "description": "The converter utilizes a boost PFC structure combined with dual switch forward to achieve higher performance without compromising grid quality.",
+    "link": ""
+  },
+  {
+    "id": "b74da0e3745d4710af5793337f9f7f27",
+    "order": 5,
+    "title": "Pocket PD Pico",
+    "hashtags": [
+      "power-electronics"
+    ],
+    "description": "PocketPD turns any PPS-capable USB-C charger into a pocket-sized bench power supply. It offers simple controls via a rotary encoder knob and two buttons, while the OLED display shows live readings of voltage, current, power, energy, and more!",
+    "link": "https://github.com/CentyLab/PocketPD/tree/main"
+  },
+  {
+    "id": "cd42b406aba4480197a1e5aed0513389",
+    "order": 6,
+    "title": "Expansion board for Raspberry Pi",
+    "hashtags": [
+      "esp32"
+    ],
+    "description": "This expansion board provides LoRa, Wi-Fi, and Bluetooth connectivity for the Raspberry Pi, using ESP32 modules, LoRa SPI, and LoRa UART.",
+    "link": ""
+  },
+  {
+    "id": "89f39b465c324546a1a2206b9770303b",
+    "order": 7,
+    "title": "SENTSOR ESP32-micro",
+    "hashtags": [
+      "4-layer",
+      "esp32"
+    ],
+    "description": "This repository is a learning resource to explore PCB design with KiCad through a practical project: a compact and powerful ESP32-based board.",
+    "link": "https://github.com/GigaOhms/SENTSOR-ESP32WR32UE"
+  },
+  {
+    "id": "13705f0772164235b2d859791b930510",
+    "order": 8,
+    "title": "IoT control and monitor solution",
+    "hashtags": [
+      "iot"
+    ],
+    "description": "This device collects data via water industry sensor connections, communicates data via RS485, and integrates 4G, Ethernet, and LoRa connectivity for real-time data transmission.",
+    "link": ""
+  },
+  {
+    "id": "d3b62c63dd5144efaf90d12e01b6e601",
+    "order": 9,
+    "title": "Low-power 3-phase inverter",
+    "hashtags": [
+      "power-electronics",
+      "stm32"
+    ],
+    "description": "Low-power 3-phase inverter for educational purposes, hardware uses STM32F103 microcontroller and IR2010 driver IC.",
+    "link": ""
+  },
+  {
+    "id": "4907615c44384ca8a696ca59f7ea1b56",
+    "order": 10,
+    "title": "10-channel wifi/lora control",
+    "hashtags": [
+      "IoT",
+      "esp32"
+    ],
+    "description": "The 10-channel controller is an intelligent remote control device using the ESP8266 platform, supporting LoRa or WiFi connectivity. The device integrates 10 independent relay/MOSFET channels for controlling industrial equipment.",
+    "link": "https://meigroupiot.com/bo-dieu-khien-10-kenh-su-dung-lora-hoac-wifi"
+  },
+  {
+    "id": "acb796e3311d4515b9ec9cfeafa9a860",
+    "order": 11,
+    "title": "16-channel Lora/Modbus control",
+    "hashtags": [
+      "iot"
+    ],
+    "description": "The 16-channel controller is an intelligent remote control device using the arduino platform, supporting LoRa or Modbus connectivity. The device integrates 16 independent relay channels for controlling industrial equipment.",
+    "link": ""
+  },
+  {
+    "id": "51c49567a546455da529707645baaab9",
+    "order": 12,
+    "title": "Power measurement and analysis board",
+    "hashtags": [
+      "dsp",
+      "power-electronics"
+    ],
+    "description": "This module senses voltage and current components using Hall sensors, and is used for research in the field of power electronics.",
+    "link": ""
+  },
+  {
+    "id": "e809a22fd5704481bb2ce611cd19f981",
+    "order": 13,
+    "title": "Smart sliding door control",
+    "hashtags": [
+      "iot"
+    ],
+    "description": "The device supports the control of the sliding door, forward and reverse operation, and remote control. It integrates 4G, Wifi, Ethernet, or LoRa, allowing for manual control or automatic settings.",
+    "link": "https://meigroupiot.com/mach-dieu-khien-he-cua-lua-ung-dung-iot"
+  },
+  {
+    "id": "6b2c6fe927ce4414ade253cb4297eb58",
+    "order": 14,
+    "title": "Isolating dummy Probe",
+    "hashtags": [
+      "analog"
+    ],
+    "description": "A pseudo-isolation device for oscilloscopes, using op-amps and a resistor network, creates pseudo-isolation for the system to measure sensitive locations.",
+    "link": ""
+  },
+  {
+    "id": "15fc6dfb6d5241e2b4c9d8caaaf7983e",
+    "order": 15,
+    "title": "3-phase voltage source",
+    "hashtags": [
+      "analog"
+    ],
+    "description": "This low-power three-phase power supply uses operational amplifier op-amps to generate a low-power three-phase voltage source, suitable for teaching and learning purposes.",
+    "link": ""
+  }
+]

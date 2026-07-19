@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Project Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #252525;
+      --panel: #2d2d2d;
+      --panel-2: #333;
+      --border: #4b4b4b;
+      --text: #f4f4f4;
+      --muted: #aaa;
+      --accent: #9fd47a;
+      --danger: #ff7676;
+      --radius: 5px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Fira Code", monospace;
+    }
+    a { color: var(--accent); }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--border);
+      background: var(--panel);
+    }
+    .topbar h1 { margin: 0; font-size: 1.1rem; color: var(--accent); }
+    .app {
+      display: grid;
+      grid-template-columns: minmax(360px, 1fr) minmax(420px, 1.1fr);
+      gap: 20px;
+      padding: 20px;
+      max-width: 1500px;
+      margin: 0 auto;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .panel h2 { margin: 0 0 16px; font-size: 1.05rem; color: var(--accent); }
+    .dropzone {
+      min-height: 190px;
+      border: 2px dashed #617255;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      cursor: pointer;
+      background: #292929;
+    }
+    .dropzone.dragover { border-color: var(--accent); background: #30372c; }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .preview {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: #222;
+    }
+    .preview img { width: 100%; height: 100%; object-fit: cover; }
+    .preview span {
+      position: absolute; left: 4px; bottom: 4px;
+      background: rgba(0,0,0,.75); color: var(--accent);
+      padding: 2px 5px; font-size: .68rem;
+    }
+    label { display: block; margin: 14px 0 6px; color: var(--muted); font-size: .86rem; }
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: #272727;
+      color: var(--text);
+      padding: 11px 12px;
+      font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    input:focus, textarea:focus { outline: 1px solid var(--accent); border-color: var(--accent); }
+    .row { display: grid; grid-template-columns: 150px 1fr; gap: 12px; }
+    button {
+      font: inherit;
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      cursor: pointer;
+      border: 1px solid var(--border);
+    }
+    .primary { background: var(--accent); color: #1f1f1f; border-color: var(--accent); font-weight: 700; }
+    .secondary { background: transparent; color: var(--accent); }
+    .danger { background: transparent; color: var(--danger); border-color: #744; }
+    .actions { display: flex; gap: 10px; margin-top: 18px; }
+    .project-list { display: grid; gap: 10px; }
+    .project-item {
+      display: grid;
+      grid-template-columns: 32px 80px 1fr auto;
+      gap: 12px;
+      align-items: center;
+      padding: 10px;
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: grab;
+    }
+    .project-item.dragging { opacity: .45; }
+    .handle { color: var(--accent); font-size: 1.25rem; text-align: center; }
+    .project-item img { width: 80px; height: 58px; object-fit: cover; border-radius: 3px; }
+    .project-title { font-weight: 700; margin-bottom: 5px; }
+    .project-meta { color: var(--muted); font-size: .78rem; }
+    .empty { color: var(--muted); text-align: center; padding: 30px; }
+    .status {
+      position: fixed; right: 18px; bottom: 18px;
+      max-width: 420px; padding: 12px 16px;
+      border-radius: var(--radius); background: #1f1f1f;
+      border: 1px solid var(--border); display: none;
+    }
+    .status.show { display: block; }
+    .status.ok { border-color: var(--accent); color: var(--accent); }
+    .status.error { border-color: var(--danger); color: var(--danger); }
+    @media (max-width: 900px) {
+      .app { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Portfolio Project Manager</h1>
+    <a href="/" target="_blank">Mở portfolio</a>
+  </header>
+
+  <main class="app">
+    <section class="panel">
+      <h2>Thêm project</h2>
+      <form id="projectForm">
+        <div class="dropzone" id="dropzone">
+          <div>
+            <strong>Kéo và thả ảnh vào đây</strong>
+            <p>Ảnh đầu tiên là ảnh đại diện. Các ảnh sau là ảnh con.</p>
+            <small>Hỗ trợ PNG, JPG, JPEG, WEBP.</small>
+          </div>
+          <input id="images" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden>
+        </div>
+        <div class="preview-grid" id="previewGrid"></div>
+
+        <div class="row">
+          <div>
+            <label for="order">Số thứ tự project</label>
+            <input id="order" name="order" type="number" min="1" value="1" required>
+          </div>
+          <div>
+            <label for="title">Tên project</label>
+            <input id="title" name="title" type="text" required>
+          </div>
+        </div>
+
+        <label for="hashtags">Hashtag, cách nhau bằng dấu phẩy</label>
+        <input id="hashtags" name="hashtags" type="text" placeholder="altium, kicad, pcb">
+
+        <label for="description">Mô tả</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="link">Link project</label>
+        <input id="link" name="link" type="url" placeholder="https://...">
+
+        <div class="actions">
+          <button class="primary" type="submit">Save project</button>
+          <button class="secondary" type="button" id="resetBtn">Làm mới</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Quản lý thứ tự project</h2>
+      <p style="color:var(--muted);font-size:.84rem">Kéo project lên hoặc xuống. Thứ tự, tên ảnh chính, ảnh con và database sẽ được cập nhật tự động.</p>
+      <div class="project-list" id="projectList"></div>
+    </section>
+  </main>
+
+  <div class="status" id="status"></div>
+
+  <script>
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('images');
+    const previewGrid = document.getElementById('previewGrid');
+    const form = document.getElementById('projectForm');
+    const projectList = document.getElementById('projectList');
+    const statusBox = document.getElementById('status');
+    let selectedFiles = [];
+    let draggedId = null;
+
+    function showStatus(message, type = 'ok') {
+      statusBox.textContent = message;
+      statusBox.className = `status show ${type}`;
+      setTimeout(() => statusBox.classList.remove('show'), 3500);
+    }
+
+    dropzone.addEventListener('click', () => fileInput.click());
+    dropzone.addEventListener('dragover', e => {
+      e.preventDefault();
+      dropzone.classList.add('dragover');
+    });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+    dropzone.addEventListener('drop', e => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      addFiles([...e.dataTransfer.files]);
+    });
+    fileInput.addEventListener('change', () => addFiles([...fileInput.files]));
+
+    function addFiles(files) {
+      const valid = files.filter(file => file.type.startsWith('image/'));
+      selectedFiles.push(...valid);
+      renderPreviews();
+    }
+
+    function renderPreviews() {
+      previewGrid.innerHTML = '';
+      selectedFiles.forEach((file, index) => {
+        const box = document.createElement('div');
+        box.className = 'preview';
+        const image = document.createElement('img');
+        image.src = URL.createObjectURL(file);
+        const label = document.createElement('span');
+        label.textContent = index === 0 ? 'Ảnh chính' : `Ảnh con ${index}`;
+        box.append(image, label);
+        previewGrid.appendChild(box);
+      });
+    }
+
+    function resetForm() {
+      form.reset();
+      selectedFiles = [];
+      previewGrid.innerHTML = '';
+      updateSuggestedOrder();
+    }
+    document.getElementById('resetBtn').addEventListener('click', resetForm);
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!selectedFiles.length) {
+        showStatus('Cần chọn ít nhất một ảnh.', 'error');
+        return;
+      }
+
+      const data = new FormData(form);
+      selectedFiles.forEach(file => data.append('images', file));
+
+      try {
+        const response = await fetch('/api/projects', { method: 'POST', body: data });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || 'Không thể lưu project.');
+        showStatus('Đã lưu project và đổi tên ảnh thành công.');
+        resetForm();
+        await loadProjects();
+      } catch (error) {
+        showStatus(error.message, 'error');
+      }
+    });
+
+    async function loadProjects() {
+      const response = await fetch('/api/projects');
+      const projects = await response.json();
+      renderProjectList(projects);
+      updateSuggestedOrder(projects.length + 1);
+    }
+
+    function updateSuggestedOrder(order) {
+      document.getElementById('order').value = order || projectList.children.length + 1;
+    }
+
+    function renderProjectList(projects) {
+      projectList.innerHTML = '';
+      if (!projects.length) {
+        projectList.innerHTML = '<div class="empty">Chưa có project.</div>';
+        return;
+      }
+
+      projects.forEach(project => {
+        const item = document.createElement('div');
+        item.className = 'project-item';
+        item.draggable = true;
+        item.dataset.id = project.id;
+        item.innerHTML = `
+          <div class="handle">☰</div>
+          <img src="${project.main_image}?v=${Date.now()}" alt="">
+          <div>
+            <div class="project-title">${project.order}. ${escapeHtml(project.title)}</div>
+            <div class="project-meta">${project.hashtags.map(t => '#' + escapeHtml(t)).join(' ')}</div>
+          </div>
+          <button class="danger" type="button">Xóa</button>
+        `;
+
+        item.querySelector('.danger').addEventListener('click', () => deleteProject(project));
+        item.addEventListener('dragstart', () => {
+          draggedId = project.id;
+          item.classList.add('dragging');
+        });
+        item.addEventListener('dragend', () => {
+          draggedId = null;
+          item.classList.remove('dragging');
+        });
+        item.addEventListener('dragover', e => {
+          e.preventDefault();
+          const dragging = projectList.querySelector('.dragging');
+          if (!dragging || dragging === item) return;
+          const rect = item.getBoundingClientRect();
+          const after = e.clientY > rect.top + rect.height / 2;
+          projectList.insertBefore(dragging, after ? item.nextSibling : item);
+        });
+        projectList.appendChild(item);
+      });
+    }
+
+    projectList.addEventListener('drop', async e => {
+      e.preventDefault();
+      const orderedIds = [...projectList.querySelectorAll('.project-item')].map(item => item.dataset.id);
+      if (!orderedIds.length) return;
+      try {
+        const response = await fetch('/api/projects/reorder', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ ordered_ids: orderedIds })
+        });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || 'Không thể đổi thứ tự.');
+        showStatus('Đã cập nhật thứ tự project.');
+        await loadProjects();
+      } catch (error) {
+        showStatus(error.message, 'error');
+        await loadProjects();
+      }
+    });
+
+    async function deleteProject(project) {
+      if (!confirm(`Xóa project "${project.title}" và toàn bộ ảnh của project này?`)) return;
+      try {
+        const response = await fetch(`/api/projects/${project.id}`, { method: 'DELETE' });
+        const result = await response.json();
+        if (!response.ok) throw new Error(result.error || 'Không thể xóa.');
+        showStatus('Đã xóa project và dồn lại thứ tự.');
+        await loadProjects();
+      } catch (error) {
+        showStatus(error.message, 'error');
+      }
+    }
+
+    function escapeHtml(value = '') {
+      return String(value).replace(/[&<>"']/g, char => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+      })[char]);
+    }
+
+    loadProjects();
+  </script>
+</body>
+</html>
